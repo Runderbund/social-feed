@@ -2,3 +2,12 @@
     background-color: rgb(188, 219, 230);
     height: 100vh;
 }
+
+.post-form {
+    background-color: white;
+    width: 33%;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1); /* adds a shadow to the bottom-right */
+    border-radius: 10px;
+    margin: 0 auto;
+    padding: 20px;
+}
