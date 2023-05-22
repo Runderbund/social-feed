@@ -1,12 +1,14 @@
+import React, {useState} from 'react';
+import NavBar from './Components/NavBar/NavBar';
+import PostList from './Components/PostList/PostList';
+import CreatePostForm from './Components/CreatePostForm/CreatePostForm';
+
 function App() {
   return (
-    <div className="App">
+    <div>
+      <NavBar />
     </div>
   );
 }
 
 export default App;
-
-
-/* <h3 style ={{margin:'1em'}}>Weight
-<small className="text-muted">Tracker</small></h3> */
