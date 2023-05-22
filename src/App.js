@@ -38,12 +38,24 @@ function App() {
     setPosts([post, ...posts]);
   };
 
+  const handleLike = (index) => { // Takes the index provided in PostList.jsx
+    const newPosts = [...posts]; // Creates a copy of the posts array
+    newPosts[index].liked = !newPosts[index].liked; // Changes liked status of the post at the given index to the opposite status. True to false, false to true.
+    setPosts(newPosts);
+  };
+
+  const handleDislike = (index) => {
+    const newPosts = [...posts];
+    newPosts[index].disliked = !newPosts[index].disliked;
+    setPosts(newPosts);
+  };
+
   return (
     <div className="background">
       <NavBar />
       <CreatePostForm handleSubmit={handleSubmit} />
       {/* <PostList posts={posts}/> */}
-      {/* posts not defined yet */}
+      {/* posts not fully defined yet */}
     </div>
   );
 }

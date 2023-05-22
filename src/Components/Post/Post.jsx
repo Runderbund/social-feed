@@ -1,7 +1,6 @@
 import React from "react";
 
-const Post = (post) => {
-        // add handleLike, handleDislike once written
+const Post = (post, handleLike, handleDislike) => {
     return (
         <div className="post">
             <b>Name</b>
