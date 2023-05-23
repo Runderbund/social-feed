@@ -3,38 +3,62 @@ Could use CSS Modules in future for larger products to add clarity.
 For this project, making notes on each classname here for where it's used.*/
 
 .background {
-    /* Used in App.js return section */
-    background-color: rgb(188, 219, 230);
-    height: 100vh;
+  /* Used in App.js return section */
+  background-color: rgb(188, 219, 230);
+  height: 100vh;
 }
 
 .post-form {
-    /* Used in CreatePostForm.jsx return section */
-    background-color: white;
-    width: 50%;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    margin: 1em auto; /* "auto" Centers the block in the page */
-    padding: 20px;
+  /* Used in CreatePostForm.jsx return section */
+  background-color: white;
+  width: 50%;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  margin: 1em auto; /* "auto" Centers the block in the page */
+  padding: 20px;
 }
 
 .submit-button {
-    background-color: rgb(61, 87, 175);
-    color: white;
-    border: none;           /* Removes default button border */
-    border-radius: 25px;    /* Gives the button rounded corners - increase this for a more oval appearance */
-    padding: 5px 30px;     /* Top/bottom padding of 10px, left/right padding of 20px */
-    font-size: 14px;
-    cursor: pointer;
-    justify-self: right;
+  background-color: rgb(61, 87, 175);
+  color: white;
+  border: none; /* Removes default button border */
+  border-radius: 25px; /* Rounds button corners */
+  padding: 5px 30px; /* Top/bottom padding of 10px, left/right padding of 20px */
+  font-size: 14px;
+  cursor: pointer;
+  justify-self: right;
+  width: 50%;
 }
 
 .submit-button:hover {
-    background-color: lightblue;
-    color: black;
+  background-color: lightblue;
+  color: black;
 }
-
 
 .input-box {
   width: 100%;
 }
+
+.post {
+    width: 100%;
+  }
+  
+  .post-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+
+.post-actions {
+  display: flex;
+  gap: 0.5em;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 1em;
+}
+

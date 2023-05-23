@@ -14,27 +14,28 @@ const CreatePostForm = ({ handleSubmit }) => {
         setPost("");
       }}
     >
+      <label htmlFor="name">Name</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        className="input-box"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+      />
 
-        <label htmlFor="name">Name</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          className="input-box"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
+      <label htmlFor="post">Post</label>
+      <textarea
+        className="input-box"
+        value={post}
+        onChange={(e) => setPost(e.target.value)}
+      />
 
-        <label htmlFor="post">Post</label>
-        <textarea
-          className="input-box"
-          value={post}
-          onChange={(e) => setPost(e.target.value)}
-        />
-
-      <button type="submit" className="submit-button">
-        Create
-      </button>
+      <div className="button-container">
+        <button type="submit" className="submit-button">
+          Create
+        </button>
+      </div>
     </form>
   );
 };

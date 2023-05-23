@@ -1,15 +1,26 @@
 import React from "react";
+import { FaThumbsUp, FaThumbsDown } from "react-icons/fa";
+// imports thumbs up/down icons after running npm install react-icons
 
-const Post = ({post, handleLike, handleDislike}) => {
-    return (
-        <div className="post">
-            <b>{post.name}</b> - {post.date} - {post.time}
-            <p>{post.contents}</p>
-            <button className="like" style={{color: post.liked ? 'blue' : 'grey'}} onClick={handleLike}>Like</button>
-            {/* Checks whether the post is currently liked. If true, sets value to blue, if false, sets to grey */}
-            <button className="dislike" style={{color: post.disliked ? 'red' : 'grey'}} onClick={handleDislike}>Dislike</button>
-            <hr />
+const Post = ({ post, handleLike, handleDislike }) => {
+  return (
+    <div className="post">
+      <div className="post-content">
+        <div>
+          <b>{post.name}</b> - {post.date} - {post.time}
+          <p>{post.contents}</p>
         </div>
-    );    
+        <div className="post-actions">
+          <button className="like" onClick={handleLike}>
+            <FaThumbsUp color={post.liked ? "green" : "grey"} />
+          </button>
+          <button className="dislike" onClick={handleDislike}>
+            <FaThumbsDown color={post.disliked ? "red" : "grey"} />
+          </button>
+        </div>
+      </div>
+      <hr />
+    </div>
+  );
 };
 export default Post;
