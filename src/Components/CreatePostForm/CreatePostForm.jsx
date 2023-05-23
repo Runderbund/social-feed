@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 
+/**
+ * A form component for creating a new post.
+ * @param {function} handleSubmit - The function to handle the form submission.
+ */
 const CreatePostForm = ({ handleSubmit }) => {
   const [name, setName] = useState("");
   const [post, setPost] = useState("");

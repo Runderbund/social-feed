@@ -7,6 +7,11 @@ import "./App.css";
 function App() {
   const [posts, setPosts] = useState([]);
 
+    /**
+   * Handles the form submission for creating a new post.
+   * @param {string} name - The name of the poster.
+   * @param {string} contents - The contents of the post.
+   */
   const handleSubmit = (name, contents) => {
     const date = new Date();
     const monthNames = [
@@ -34,25 +39,35 @@ function App() {
     setPosts([post, ...posts]);
   };
 
-  /**
-   * Sets "Liked" status to the opposite of its current value when clicked.
+    /**
+   * Toggles "Liked" status for a post when clicked, and resets "Disliked" status to false.
    * @param {int} index - The index of the post in the posts array.
    */
-  const handleLike = (index) => {
-    const newPosts = [...posts]; // Creates a copy of the posts array
-    newPosts[index].liked = !newPosts[index].liked; // Changes liked status of the post at the given index/key to the opposite status: true to false, false to true.
-    setPosts(newPosts);
-  };
-
-   /**
-   * Sets "Disliked" status to the opposite of its current value when clicked.
-   * @param {int} index - The index of the post in the posts array.
-   */
-  const handleDislike = (index) => {
-    const newPosts = [...posts];
-    newPosts[index].disliked = !newPosts[index].disliked;
-    setPosts(newPosts);
-  };
+    const handleLike = (index) => {
+      const newPosts = [...posts];
+      if (newPosts[index].liked) {
+        newPosts[index].liked = false;
+      } else {
+        newPosts[index].liked = true;
+        newPosts[index].disliked = false;
+      }
+      setPosts(newPosts);
+    };
+  
+    /**
+     * Toggles "Disliked" status for a post when clicked, and resets "Liked" status to false.
+     * @param {int} index - The index of the post in the posts array.
+     */
+    const handleDislike = (index) => {
+      const newPosts = [...posts];
+      if (newPosts[index].disliked) {
+        newPosts[index].disliked = false;
+      } else {
+        newPosts[index].disliked = true;
+        newPosts[index].liked = false;
+      }
+      setPosts(newPosts);
+    };
   // These are here, instead of intead of Post, to allow passing directly to PostList.jsx below
 
   return (
@@ -69,8 +84,3 @@ function App() {
 }
 
 export default App;
-
-//TODO: Add docstrings to all functions
-//TODO: Make Like/Dislike mutually exclusive
-
-//TODO (Maybe): Restyle CreatePostForm to match picture

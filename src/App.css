@@ -2,6 +2,17 @@
 Could use CSS Modules in future for larger products to add clarity.
 For this project, making notes on each classname here for where it's used.*/
 
+.nav-bar {
+  /* Used in NavBar.jsx */
+  background-color: white;
+}
+
+.nav-bar h2 {
+    /* Used in NavBar.jsx */
+  padding: 1em;
+}
+
+
 .background {
   /* Used in App.js return section */
   background-color: rgb(188, 219, 230);
@@ -40,8 +51,10 @@ For this project, making notes on each classname here for where it's used.*/
 }
 
 .submit-button:hover {
+  /* Used in CreatePostForm to change the submit button on hover */
   background-color: lightblue;
   color: black;
+  cursor: pointer;
 }
 
 .input-box {

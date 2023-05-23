@@ -2,9 +2,10 @@ import React from "react";
 import Post from "../Post/Post";
 
 /**
- * Creates a vertical list of submitted posts
- * @param {Array} posts // Not sure how this works with JS objects.
- * @returns 
+ * A component that generates a list of Post components.
+ * @param {Array} posts - The array of post objects.
+ * @param {function} handleLike - The function to handle like actions.
+ * @param {function} handleDislike - The function to handle dislike actions.
  */
 const PostList = ({ posts, handleLike, handleDislike }) => {
   return (
