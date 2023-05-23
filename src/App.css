@@ -9,7 +9,7 @@ For this project, making notes on each classname here for where it's used.*/
 }
 
 .post-form {
-  /* Used in CreatePostForm.jsx return section */
+  /* Used in CreatePostForm.jsx onSubmit form */
   background-color: white;
   width: 50%;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
@@ -19,15 +19,24 @@ For this project, making notes on each classname here for where it's used.*/
 }
 
 .submit-button {
+  /* Used for CreatePostForm "Create" button */
   background-color: rgb(61, 87, 175);
   color: white;
-  border: none; /* Removes default button border */
+  border: none;
   border-radius: 25px; /* Rounds button corners */
-  padding: 5px 30px; /* Top/bottom padding of 10px, left/right padding of 20px */
+  padding: 5px 30px; /* Top/bottom padding first, then left/right padding */
   font-size: 14px;
   cursor: pointer;
   justify-self: right;
   width: 50%;
+}
+
+.button-container {
+  /* Used in CreatePostForm to center the "Create" button */
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 1em;
 }
 
 .submit-button:hover {
@@ -36,29 +45,26 @@ For this project, making notes on each classname here for where it's used.*/
 }
 
 .input-box {
+  /* Used for CreatePostForm "Name/Post" sections */
   width: 100%;
 }
 
 .post {
-    width: 100%;
-  }
-  
-  .post-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
+  /* Used in Post.jsx
+    Surrounds post-content to exclude <hr /> */
+  width: 100%;
+}
+
+.post-content {
+  /* Used in Post.jsx
+     Styles the post and (dis)like button rows */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
 .post-actions {
+  /* Used in Post.jsx to make a gap between (dis)like buttons */
   display: flex;
   gap: 0.5em;
 }
-
-.button-container {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  margin-top: 1em;
-}
-

@@ -24,11 +24,13 @@ function App() {
       "December",
     ];
     const minutes = date.getMinutes().toString().padStart(2, "0");
-    // Adds a leading 0 to minutes if minutes is less than 10. Shows 17:07 instead of 17:7.
+    // Adds a leading 0 to minutes if minutes is less than 10. E.g., shows 17:07 instead of 17:7.
     const post = {
       name,
       contents,
-      date: `${date.getDate()} ${monthNames[date.getMonth()]} ${date.getFullYear()}`,
+      date: `${date.getDate()} ${
+        monthNames[date.getMonth()]
+      } ${date.getFullYear()}`,
       // Displays as e.g., 2 June 2021
       time: `${date.getHours()}:${minutes}`,
       // Displays 24-hour time.
@@ -38,7 +40,8 @@ function App() {
     setPosts([post, ...posts]);
   };
 
-  const handleLike = (index) => { // Takes the index provided in PostList.jsx
+  const handleLike = (index) => {
+    // Takes the index provided in PostList.jsx
     const newPosts = [...posts]; // Creates a copy of the posts array
     newPosts[index].liked = !newPosts[index].liked; // Changes liked status of the post at the given index/key to the opposite status: true to false, false to true.
     setPosts(newPosts);
@@ -55,9 +58,18 @@ function App() {
     <div className="background">
       <NavBar />
       <CreatePostForm handleSubmit={handleSubmit} />
-      <PostList posts={posts} handleLike={handleLike} handleDislike={handleDislike} />
+      <PostList
+        posts={posts}
+        handleLike={handleLike}
+        handleDislike={handleDislike}
+      />
     </div>
   );
 }
 
 export default App;
+
+//TODO: Add docstrings to all functions
+//TODO: Make Like/Dislike mutually exclusive
+
+//TODO (Maybe): Restyle CreatePostForm to match picture
