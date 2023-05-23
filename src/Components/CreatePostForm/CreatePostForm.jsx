@@ -7,9 +7,9 @@ const CreatePostForm = () => {
   return (
     <form className="post-form">
       <label htmlFor="name">Name</label>
-      <input type="text" id="name" name="name" value="" /><br/>
+      <input type="text" id="name" name="name" value={name} onChange={e => setName(e.target.value)}/><br/>
       <label htmlFor="post">Post</label>
-      <input type="textarea" id="post" name="post" value="" />
+      <textarea value={post} onChange={e => setPost(e.target.value)} />
       <button type="submit">Create</button>
     </form>
   );

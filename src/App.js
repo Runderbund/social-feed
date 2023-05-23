@@ -7,7 +7,7 @@ import "./App.css";
 function App() {
   const [posts, setPosts] = useState([]);
 
-  const handleSubmit = (name, postText) => {
+  const handleSubmit = (name, contents) => {
     const date = new Date();
     const monthNames = [
       "January",
@@ -25,7 +25,7 @@ function App() {
     ];
     const post = {
       name,
-      postText,
+      contents,
       date: `${date.getDate()} ${
         monthNames[date.getMonth()]
       } ${date.getFullYear()}`,
