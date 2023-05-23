@@ -10,21 +10,15 @@ function App() {
   const handleSubmit = (name, contents) => {
     const date = new Date();
     const monthNames = [
-      "January",
-      "February",
-      "March",
-      "April",
-      "May",
-      "June",
-      "July",
-      "August",
-      "September",
-      "October",
-      "November",
-      "December",
+      "January", "February", "March", "April", "May", "June", "July",
+      "August", "September", "October", "November", "December",
     ];
     const minutes = date.getMinutes().toString().padStart(2, "0");
     // Adds a leading 0 to minutes if minutes is less than 10. E.g., shows 17:07 instead of 17:7.
+
+    /**
+     * Creates a new post object with the given name, contents, current date/time, and liked/disliked status.
+     */
     const post = {
       name,
       contents,
@@ -40,13 +34,20 @@ function App() {
     setPosts([post, ...posts]);
   };
 
+  /**
+   * Sets "Liked" status to the opposite of its current value when clicked.
+   * @param {int} index - The index of the post in the posts array.
+   */
   const handleLike = (index) => {
-    // Takes the index provided in PostList.jsx
     const newPosts = [...posts]; // Creates a copy of the posts array
     newPosts[index].liked = !newPosts[index].liked; // Changes liked status of the post at the given index/key to the opposite status: true to false, false to true.
     setPosts(newPosts);
   };
 
+   /**
+   * Sets "Disliked" status to the opposite of its current value when clicked.
+   * @param {int} index - The index of the post in the posts array.
+   */
   const handleDislike = (index) => {
     const newPosts = [...posts];
     newPosts[index].disliked = !newPosts[index].disliked;
