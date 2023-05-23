@@ -23,15 +23,15 @@ function App() {
       "November",
       "December",
     ];
+    const minutes = date.getMinutes().toString().padStart(2, "0");
+    // Adds a leading 0 to minutes if minutes is less than 10. Shows 17:07 instead of 17:7.
     const post = {
       name,
       contents,
-      date: `${date.getDate()} ${
-        monthNames[date.getMonth()]
-      } ${date.getFullYear()}`,
+      date: `${date.getDate()} ${monthNames[date.getMonth()]} ${date.getFullYear()}`,
       // Displays as e.g., 2 June 2021
-      time: `${date.getHours()}:${date.getMinutes()}`,
-      // Dsiplays 24-hour time. May add logic later to handle AM/PM
+      time: `${date.getHours()}:${minutes}`,
+      // Displays 24-hour time.
       liked: false,
       disliked: false,
     };
@@ -40,7 +40,7 @@ function App() {
 
   const handleLike = (index) => { // Takes the index provided in PostList.jsx
     const newPosts = [...posts]; // Creates a copy of the posts array
-    newPosts[index].liked = !newPosts[index].liked; // Changes liked status of the post at the given index to the opposite status. True to false, false to true.
+    newPosts[index].liked = !newPosts[index].liked; // Changes liked status of the post at the given index/key to the opposite status: true to false, false to true.
     setPosts(newPosts);
   };
 
@@ -49,6 +49,7 @@ function App() {
     newPosts[index].disliked = !newPosts[index].disliked;
     setPosts(newPosts);
   };
+  // These are here, instead of intead of Post, to allow passing directly to PostList.jsx below
 
   return (
     <div className="background">

@@ -1,13 +1,40 @@
+/* CSS is globally available in a React app, so only needs to be imported once.
+Could use CSS Modules in future for larger products to add clarity.
+For this project, making notes on each classname here for where it's used.*/
+
 .background {
+    /* Used in App.js return section */
     background-color: rgb(188, 219, 230);
     height: 100vh;
 }
 
 .post-form {
+    /* Used in CreatePostForm.jsx return section */
     background-color: white;
-    width: 33%;
+    width: 50%;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    margin: 0 auto;
+    margin: 1em auto; /* "auto" Centers the block in the page */
     padding: 20px;
+}
+
+.submit-button {
+    background-color: rgb(61, 87, 175);
+    color: white;
+    border: none;           /* Removes default button border */
+    border-radius: 25px;    /* Gives the button rounded corners - increase this for a more oval appearance */
+    padding: 5px 30px;     /* Top/bottom padding of 10px, left/right padding of 20px */
+    font-size: 14px;
+    cursor: pointer;
+    justify-self: right;
+}
+
+.submit-button:hover {
+    background-color: lightblue;
+    color: black;
+}
+
+
+.input-box {
+  width: 100%;
 }
