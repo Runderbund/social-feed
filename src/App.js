@@ -54,8 +54,7 @@ function App() {
     <div className="background">
       <NavBar />
       <CreatePostForm handleSubmit={handleSubmit} />
-      {/* <PostList posts={posts}/> */}
-      {/* posts not fully defined yet */}
+      <PostList posts={posts} handleLike={handleLike} handleDislike={handleDislike} />
     </div>
   );
 }

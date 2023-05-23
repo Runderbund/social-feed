@@ -1,6 +1,6 @@
 import React from "react";
 
-const Post = (post, handleLike, handleDislike) => {
+const Post = ({post, handleLike, handleDislike}) => {
     return (
         <div className="post">
             <b>{post.name}</b> - {post.date} - {post.time}
